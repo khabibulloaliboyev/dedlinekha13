@@ -1,0 +1,420 @@
+@import "./mixins";
+@import "./variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: $primary-background-color;
+}
+a {
+  text-decoration: none;
+  color: $white-color;
+  font-size: $small-size;
+  // &:hover {
+  //   color: $secondary-color;
+  //   transition: all 0.4s;
+  // }
+}
+
+.container {
+  max-width: 1260px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 18px;
+}
+
+.header {
+  @include flex-between();
+  padding: 30px 0px;
+  .logo {
+    @include flex-between();
+    gap: 15px;
+    .first {
+      width: 102px;
+      cursor: pointer;
+    }
+    .second-pic {
+      width: 76px;
+      cursor: pointer;
+    }
+  }
+  .navigation {
+    ul {
+      @include flex-between();
+      gap: 41px;
+      list-style: none;
+    }
+  }
+
+  .contact {
+    @include flex-between();
+    gap: 38px;
+    button {
+      border: none;
+      background-color: transparent;
+      padding: 18px 38px;
+      border-radius: 40px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+
+      &:nth-child(1) {
+        border: 1px solid white;
+        color: $white-color;
+        background-color: transparent;
+      }
+
+      &:nth-child(2) {
+        border: 1px solid $linear-gradient;
+        color: $black-color;
+        background: $linear-gradient;
+      }
+    }
+  }
+}
+
+// hero section start
+
+.hero-section {
+  @include flex-between();
+  padding: 100px 0px;
+  gap: 300px;
+
+  .hero_info {
+    @include flex-direction();
+    gap: 36px;
+
+    .hero_title {
+      h2 {
+        color: $white-color;
+        font-size: 40px;
+
+        .active {
+          display: inline-block;
+          background: linear-gradient(90deg, #8176af, #c0b7e8);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+      }
+    }
+    .hero_paragraph {
+      p {
+        font-size: $avarage-size;
+        color: rgba(255, 255, 255, 1);
+      }
+    }
+    .hero_nav {
+      @include flex-between();
+      width: 70%;
+      img {
+        width: 42px;
+      }
+      a {
+        border: none;
+        background-color: transparent;
+        padding: 18px 38px;
+        border-radius: 40px;
+        font-size: 12px;
+        font-weight: 700;
+        cursor: pointer;
+        border: 1px solid $linear-gradient;
+        color: rgba(52, 48, 69, 1);
+        background: $linear-gradient;
+      }
+    }
+  }
+}
+
+.hero_contact {
+  @include flex-between();
+  border: 1px solid transparent;
+  padding: 50px 40px;
+  border-radius: 90px;
+  background: radial-gradient(
+      50% 2900.76% at 50% 53.89%,
+      rgba(58, 52, 86, 0.95) 0%,
+      #211e2e 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+  color: $white-color;
+  gap: 80px;
+  img {
+    width: 70px;
+  }
+  .visit {
+    @include flex-between();
+    width: 30%;
+    .visit_info {
+      @include flex-direction();
+      gap: 10px;
+      p {
+        color: rgba(255, 255, 255, 1);
+        font-size: $middle-size;
+      }
+    }
+  }
+  .calling {
+    @include flex-between();
+    width: 30%;
+    .calling_info {
+      @include flex-direction();
+      gap: 10px;
+      p {
+        color: rgba(255, 255, 255, 1);
+        font-size: $middle-size;
+      }
+    }
+  }
+  .message {
+    @include flex-between();
+    width: 30%;
+    .message_info {
+      @include flex-direction();
+      gap: 10px;
+      p {
+        color: rgba(255, 255, 255, 1);
+        font-size: $middle-size;
+      }
+    }
+  }
+}
+
+.second {
+  margin-top: 90px;
+  .hydra_intro {
+    @include flex-between();
+    gap: 50px;
+    .introduction {
+      width: 50%;
+      h2 {
+        font-size: 36px;
+        color: $white-color;
+      }
+      &:nth-child(2) {
+        font-weight: 300;
+        color: #c0b7e8;
+      }
+    }
+    .introduction-text {
+      width: 50%;
+      p {
+        font-size: $avarage-size;
+        color: $white-color;
+      }
+    }
+  }
+
+  .hydra_about {
+    margin-top: 100px;
+    @include flex-between();
+    gap: 110px;
+    img {
+      width: 524px;
+    }
+    .hydra_about_info {
+      @include flex-direction();
+      gap: 40px;
+      .about_title {
+        color: $white-color;
+        h2 {
+          font-size: 36px;
+          font-weight: 700;
+        }
+        p {
+          font-size: 36px;
+          font-weight: 200;
+          opacity: 0.7;
+        }
+      }
+    }
+    .about_info {
+      p {
+        font-size: $avarage-size;
+        color: $white-color;
+        opacity: 0.7;
+        font-weight: 300;
+      }
+    }
+    .about_button {
+      width: 220px;
+      border: none;
+      background-color: transparent;
+      padding: 18px 38px;
+      border-radius: 40px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid $linear-gradient;
+      color: $black-color;
+      background: $linear-gradient;
+    }
+  }
+  .cards_group {
+    margin-top: 50px;
+    @include flex-between();
+
+    gap: 10px;
+    .card {
+      width: 310px;
+      height: 510px;
+      @include flex-direction();
+      justify-content: center;
+      gap: 30px;
+      padding: 23px 45px;
+      background: radial-gradient(50% 50% at 50% 50%, #433d60 0%, #211e2e 100%);
+      border-radius: 40px;
+      color: $white-color;
+      img {
+        width: 220px;
+      }
+      h3 {
+        text-align: center;
+      }
+      .btn-class {
+        @include flex-center();
+        .card_button {
+          @include flex-center();
+          text-align: center;
+          width: 154px;
+          border: none;
+          background-color: transparent;
+          padding: 18px 38px;
+          border-radius: 40px;
+          font-size: 12px;
+          font-weight: 500;
+          cursor: pointer;
+          border: 1px solid $linear-gradient;
+          color: $black-color;
+          background: $linear-gradient;
+        }
+      }
+    }
+  }
+}
+
+.techno {
+  margin-top: 114px;
+  .technologies {
+    background-image: url("../images/fucking_pic.png");
+    background-size: cover;
+    height: 297px;
+    position: relative;
+    h2 {
+      position: absolute;
+      top: 45%;
+      left: 380px;
+      font-size: 36px;
+      color: $white-color;
+    }
+  }
+  .technologies_ads {
+    margin-top: 100px;
+    @include flex-between();
+    img {
+      width: 175px;
+    }
+  }
+}
+
+.gr_input {
+  margin-top: 112px;
+  background: radial-gradient(50% 50% at 50% 50%, #403a5f 0%, #211e2e 100%);
+  border-radius: 100px;
+  padding: 90px 110px;
+  .inputs_title {
+    text-align: center;
+    font-size: 36px;
+    color: $white-color;
+  }
+  .input_groups {
+    @include flex-direction();
+    gap: 35px;
+    .groups {
+      @include flex-between();
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 65px;
+      input {
+        width: 48%;
+        padding: 27px 20px;
+        border-radius: 40px;
+        background-color: transparent;
+        border: 1px solid $white-color;
+        &::placeholder {
+          color: $white-color;
+        }
+      }
+    }
+    input {
+      width: 100%;
+      padding: 27px 20px;
+      border-radius: 40px;
+      background-color: transparent;
+      border: 1px solid $white-color;
+      &::placeholder {
+        color: $white-color;
+      }
+    }
+    textarea {
+      resize: none;
+      height: 210px;
+      border-radius: 40px;
+      background-color: transparent;
+      border: 1px solid $white-color;
+      padding: 30px 50px;
+
+      &::placeholder {
+        color: $white-color;
+      }
+      &:focus {
+        outline: none;
+      }
+    }
+
+   .btn-class{
+    @include flex-center;
+    margin-top: 15px;
+    .btn-send {
+      @include flex-center();
+      text-align: center;
+      width: 214px;
+      border: none;
+      background-color: transparent;
+      padding: 18px 38px;
+      border-radius: 40px;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid $linear-gradient;
+      color: $black-color;
+      background: $linear-gradient;
+    }
+   }
+  }
+}
+
+.footer {
+  margin-top: 130px;
+  font-size: 16px;
+  @include flex-between();
+  align-items: flex-start;
+ .footer_logo {
+  img {
+    width: 185px;
+  }
+ }
+ .footer_nav {
+  ul{
+    @include flex-direction();
+    gap: 10px;
+    li {
+      list-style: none;
+    }
+  }
+ }
+}
